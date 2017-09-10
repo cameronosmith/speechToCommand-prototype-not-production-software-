@@ -1,0 +1,2 @@
+# speechToCommand
+speechToCommand: Code by voice - essentially a free and programmable Dragon dictation with customizable programming dictation libraries. Desktop java application for converting speech commands to keyboard sequences. Customizable libraries for custom commands. Includes Vim library to navigate file by voice, general dictation composition, Java library for common java code dictation, and more. 
