@@ -7,9 +7,9 @@ import java.awt.event.KeyEvent;
 import speechToCommand.Roboto;
 import speechToCommand.SpeechStringToCommand;
 
-public class VimNavigation {
+public class VimNavigation implements GrammarLibraryExtend {
 	static boolean visualMode=false;
-	public static boolean searchForCommand(String word) throws AWTException {
+	public boolean searchForCommand(String word) throws AWTException {
 		boolean resultFound = false;
 		switch(word.toLowerCase()) {
 		//MOVE UP RIGHT DOWN LEFT

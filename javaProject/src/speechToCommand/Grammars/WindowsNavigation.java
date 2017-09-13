@@ -6,8 +6,8 @@ import java.awt.event.KeyEvent;
 import speechToCommand.Roboto;
 import speechToCommand.SpeechStringToCommand;
 
-public class WindowsNavigation {
-	public static boolean searchForCommand(String word) throws AWTException {
+public class WindowsNavigation implements GrammarLibraryExtend {
+	public boolean searchForCommand(String word) throws AWTException {
 		boolean resultFound = false;
 		switch(word.toLowerCase()) {
 		//CHANGE FILE (control tab, control shift tab)
