@@ -1,6 +1,8 @@
 package speechToCommand;
 
 import java.awt.AWTException;
+import java.util.ArrayList;
+import java.util.List;
 
 import speechToCommand.Grammars.*;
 
@@ -19,16 +21,22 @@ public class ClassifyWord {
 	}
 	//references the word by all grammar libraries (must manually insert library with if-library.searchForCommand etc)
 		public static void referenceLibraries(String word) throws AWTException {
-			if((new VimNavigation()).searchForCommand(word))	
-				System.out.println("VimNavigation command recognized: "+word);
-			else if((new WindowsNavigation()).searchForCommand(word))
-				System.out.println("WindowsNavigation command recognized: "+word);
-			else if((new JavaDictationCommands()).searchForCommand(word))
-				System.out.println("JavaDictationCommands command recognized: "+word);
-			else {
-				(new GeneralDictation()).toDictation(word);
-				System.out.println("non parameter/command recognized: "+word+", word send to dictation");
+			List<GrammarLibraryExtend> listOfLibraries = new ArrayList();
+			listOfLibraries.add(new VimNavigation());
+			listOfLibraries.add(new WindowsNavigation());
+			listOfLibraries.add(new JavaDictationCommands());
+
+			boolean isGrammarLibrary=false;	
+			for(int i=0;i<listOfLibraries.size();i++) {
+				if((listOfLibraries.get(i)).searchForCommand(word)) {
+					isGrammarLibrary=true;
+					break;
+				}
 			}
+			if(!isGrammarLibrary) {
+				(new GeneralDictation()).toDictation(word);
+			}
+			isGrammarLibrary=false;
 		}
 	//determine if word sent is a number and store it in the number placeholder if so
 	private static boolean isNumeric(String str){
