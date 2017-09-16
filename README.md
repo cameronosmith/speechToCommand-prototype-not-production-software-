@@ -1,9 +1,11 @@
 speechToCommand: a free and customizable dictation software to cure RSI.
 Optimized for and includes libraries for programming by voice.
 
-Pre-installed libraries include: - Vim library to navigate file by voice
-- Java library for common java code dictation - General dictation for
-general tax composition - Windows library for basic Windows commands
+Pre-installed libraries include: 
+- Vim library to navigate file by voice
+- Java library for common java code dictation 
+- General dictation for general tax composition
+- Windows library for basic Windows commands
 
 Demo and how to install:
 https://www.youtube.com/watch?v=Z7ZBN4G-nW4&t=65s
